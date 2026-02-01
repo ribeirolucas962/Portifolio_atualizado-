@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="25" cy="25" r="20" fill="#0984e3" opacity="0.1"/>
+    
+    <!-- Data Points -->
+    <circle cx="15" cy="35" r="3" fill="#0984e3"/>
+    <circle cx="25" cy="20" r="3" fill="#0984e3"/>
+    <circle cx="35" cy="30" r="3" fill="#0984e3"/>
+    
+    <!-- Connecting Lines -->
+    <line x1="15" y1="35" x2="25" y2="20" stroke="#0984e3" stroke-width="2"/>
+    <line x1="25" y1="20" x2="35" y2="30" stroke="#0984e3" stroke-width="2"/>
+    
+    <!-- Text -->
+    <text x="60" y="32" font-family="Poppins, sans-serif" font-size="24" font-weight="600" fill="#2d3436">
+        Lucas Ribeiro
+    </text>
+</svg> 

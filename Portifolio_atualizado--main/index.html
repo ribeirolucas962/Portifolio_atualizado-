@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Ribeiro - Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .portfolio-icons {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding: 3rem;
+            background: #f8f9fa;
+            margin-top: 2rem;
+        }
+
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-icon {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d1a664;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 15px rgba(209, 166, 100, 0.2);
+        }
+
+        .project-icon:hover {
+            border-color: #007bff;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(209, 166, 100, 0.3);
+        }
+
+        .icon-label {
+            font-size: 1.2rem;
+            color: #2d3436;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .portfolio-title {
+            text-align: center;
+            color: #2d3436;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .portfolio-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="./imagens/profile.JPG" alt="Lucas Ribeiro Profile" class="logo-img" id="profile-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#certificates">Certificados</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal for Profile Image -->
+    <div class="modal" id="profile-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="./imagens/profile.JPG" alt="Lucas Ribeiro Profile" class="modal-img">
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="./imagens/imagem de fundo.png" alt="Data Analytics Background" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Olá! Bem-vindo ao meu portiflolio. Eu sou Lucas Ribeiro, analista e cientista de dados, pronto para transformar seus dados em insights valiosos.</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Sobre Mim</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="about-intro">Desde 2012, tenho consolidado uma carreira robusta como eletrotécnico, onde a meticulosidade, inovação em resolução de problemas e a busca incessante por resultados excelentes moldaram meu percurso profissional. Em 2023, decidi seguir minha verdadeira vocação e embarquei na emocionante jornada de Ciência de Dados. Esta transição vai além de uma mudança de carreira; é a concretização de um sonho onde combino minha profunda paixão por tecnologia com meu compromisso de transformar insights em ações revolucionárias para negócios.</p>
+                
+                <div class="about-highlight">
+                    <h3>Por que devo fazer parte do seu time?</h3>
+                    <p>Estou convicto de que a magia dos dados reside na sua capacidade de redefinir paradigmas empresariais. Mais do que acreditar nisso, estou equipado e pronto para tornar essa transformação uma realidade palpável. A habilidade de desembaraçar complexidades, adquirida ao longo de anos e reforçada por uma formação sólida e contínua em Ciência de Dados, me capacita a prover soluções estratégicas que refinam processos e catalisam resultados tangíveis e impressionantes.</p>
+                </div>
+
+                <div class="about-value">
+                    <h3>O que sua equipe ganha ao me contratar?</h3>
+                    <ul class="value-list">
+                        <li><i class="fas fa-check-circle"></i> Inovação orientada a resultados: Eu não apenas analiso dados; eu os transformo em estratégias inteligentes e alinhadas aos objetivos do negócio.</li>
+                        <li><i class="fas fa-check-circle"></i> Comprometimento total: Sou movido por desafios e tenho uma paixão inesgotável pelo aprendizado. Estou sempre buscando superar as expectativas e elevar os padrões.</li>
+                        <li><i class="fas fa-check-circle"></i> Perspectiva estratégica: Minha experiência me proporcionou uma habilidade única de mesclar conhecimento técnico com aplicabilidade prática, vital para impactar positivamente e de maneira significativa.</li>
+                    </ul>
+                </div>
+
+                <p class="about-closing">Se procura alguém que não só se adapte ao seu time, mas que eleve o nível de todo o grupo, estamos na mesma página. Ter a chance de contribuir para o sucesso da sua empresa seria um privilégio e, sem dúvida, uma oportunidade de gerar valor excepcional e duradouro. Vamos juntos transformar desafios em oportunidades e dados em decisões que moldam o futuro.</p>
+
+                <div class="markdown-link" style="margin-top: 2rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <a href="curriculo.md" target="_blank" title="Meu curriculo">
+                        <i class="fab fa-markdown" style="font-size: 2rem; color: #24292f;"></i>
+                        <span style="font-size: 1.1rem; color: #24292f;">Meu curriculo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2>Habilidades</h2>
+        <div class="skills">
+            <div class="skill-tags">
+                <span><i class="fab fa-python"></i> Python</span>
+                <span><i class="fas fa-database"></i> SQL</span>
+                <span><i class="fas fa-chart-bar"></i> Power BI</span>
+                <span><img src="./imagens/R_logo.svg" alt="R Logo" class="r-logo"> R</span>
+                <span><i class="fas fa-file-excel"></i> Excel</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificados</h2>
+            <div class="certificates-grid" id="certificates-grid">
+                <!-- Certificates will be loaded dynamically from certificates.json -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates List Modal -->
+    <div class="modal" id="certificates-modal">
+        <div class="modal-content certificates-list">
+            <span class="close-modal">&times;</span>
+            <h2>Meus Certificados</h2>
+            <div class="certificates-list-container">
+                <!-- Certificate list will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Meu Portfólio</h2>
+        <div class="portfolio-icons">
+            <div class="icon-container" onclick="window.open('./projetos/Projeto de conclusão de curso escola DNC Power Point V5 [Salvo automaticamente] (2)[1].pdf', '_blank')" style="cursor: pointer;">
+                <img src="imagens/projeto 1.png" alt="Projeto 1" class="project-icon">
+            </div>
+            <div class="icon-container" onclick="window.open('https://colab.research.google.com/drive/1UTxZTvK6GUUbfi7KKkrNWc3gsYmX73U0?usp=sharing', '_blank')" style="cursor: pointer;">
+                <img src="imagens/projeto 2.png" alt="Projeto 2" class="project-icon">
+            </div>
+            <div class="icon-container" onclick="window.open('https://github.com/ribeirolucas962/Modelo_de_Fraude/blob/main/modelo_previsao__fraude.ipynb', '_blank')" style="cursor: pointer;">
+                <img src="imagens/projeto 3.png" alt="Projeto 3" class="project-icon">
+            </div>
+            <div class="icon-container" onclick="window.open('https://github.com/ribeirolucas962/Projeto_aprendizado_de-maquina_Scikit_learn_Keras_TensorFlow.git', '_blank')" style="cursor: pointer;">
+                <img src="imagens/projeto 4.png" alt="Projeto 4" class="project-icon">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Entre em Contato</h2>
+        <div class="contact-content">
+            <p>Entre em contato pelas redes sociais ou pelos ícones abaixo:</p>
+            <div class="social-links">
+                <a href="https://github.com/ribeirolucas962" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/lucas-ribeiron/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <!-- E-mail -->
+                <a href="mailto:lucas@email.com" target="_blank" title="E-mail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lucas Ribeiro Nepomuceno de Almeida. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
