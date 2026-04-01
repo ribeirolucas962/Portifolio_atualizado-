@@ -7,72 +7,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .portfolio-icons {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            padding: 3rem;
-            background: #f8f9fa;
-            margin-top: 2rem;
-        }
-
-        .icon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .icon-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-icon {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #d1a664;
-            transition: all 0.3s ease;
-            margin-bottom: 0.5rem;
-            box-shadow: 0 4px 15px rgba(209, 166, 100, 0.2);
-        }
-
-        .project-icon:hover {
-            border-color: #007bff;
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(209, 166, 100, 0.3);
-        }
-
-        .icon-label {
-            font-size: 1.2rem;
-            color: #2d3436;
-            margin-top: 0.5rem;
-            font-weight: 500;
-        }
-
-        .portfolio-title {
-            text-align: center;
-            color: #2d3436;
-            margin: 2rem 0;
-            font-size: 2.5rem;
-            font-weight: 600;
-        }
-
-        .portfolio-section {
-            padding: 4rem 0;
-            background: #f8f9fa;
-        }
-    </style>
 </head>
 <body>
+    <div id="scroll-progress"></div>
     <nav class="navbar">
         <div class="navbar-container">
             <div class="logo">
-                <img src="./imagens/profile.JPG" alt="Lucas Ribeiro Profile" class="logo-img" id="profile-img">
+                <a href="#home" class="logo-badge">
+                    <i class="fas fa-chart-line logo-icon"></i>
+                    <span class="logo-title">Meu Portfólio</span>
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -90,21 +34,23 @@
         </div>
     </nav>
 
-    <!-- Modal for Profile Image -->
-    <div class="modal" id="profile-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img src="./imagens/profile.JPG" alt="Lucas Ribeiro Profile" class="modal-img">
-        </div>
-    </div>
-
     <section id="home" class="hero">
         <div class="hero-background">
             <img src="./imagens/imagem de fundo.png" alt="Data Analytics Background" class="hero-bg-image">
         </div>
+        <div class="hero-grid-pattern"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Olá! Bem-vindo ao meu portiflolio. Eu sou Lucas Ribeiro, analista e cientista de dados, pronto para transformar seus dados em insights valiosos.</h1>
+                <span class="hero-tag">Analista &amp; Cientista de Dados</span>
+                <h1>Olá, eu sou <span class="hero-name">Lucas Ribeiro</span></h1>
+                <div class="hero-typing-container">
+                    <span>Especialista em </span><span class="typing-text" data-texts='["Análise de Dados", "Ciência de Dados", "Machine Learning", "Business Intelligence", "Visualização de Dados", "Modelagem Predictiva"]'></span><span class="cursor">|</span>
+                </div>
+                <p class="hero-description">Transformando dados brutos em insights estratégicos que geram valor real para o negócio.</p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn-primary">Ver Projetos</a>
+                    <a href="#contact" class="btn-secondary">Entrar em Contato</a>
+                </div>
             </div>
         </div>
     </section>
@@ -112,9 +58,12 @@
     <section id="about" class="about">
         <h2>Sobre Minha pessoa</h2>
         <div class="about-content">
+            <div class="about-image">
+                <img src="./imagens/profile.JPG" alt="Lucas Ribeiro" class="about-profile-img">
+            </div>
             <div class="about-text">
-                <p class="about-intro">Analista de Dados especializado em análise estatística, modelagem predictiva e visualização de dados. Atuo no desenvolvimento de soluções de Business Intelligence orientadas a resultados, desde a captura e tratamento dos dados até a entrega de dashboards e relatórios acionáveis..</p>
-                
+                <p class="about-intro">Analista de Dados especializado em análise estatística, modelagem predictiva e visualização de dados. Atuo no desenvolvimento de soluções de Business Intelligence orientadas a resultados, desde a captura e tratamento dos dados até a entrega de dashboards e relatórios acionáveis.</p>
+
                 <div class="about-highlight">
                     <h3>Por que o seu time precisa do meu perfil ?</h3>
                     <p>Dados têm o poder de redefinir decisões empresariais.
@@ -125,7 +74,7 @@
                 <div class="about-value">
                     <h3>O que sua equipe conquista ao contar com o meu perfil?</h3>
                     <ul class="value-list">
-                        <li><i class="fas fa-check-circle"></i> inovação orientada a resultados: Não apenas analiso dados os transformo em estratégias alinhadas aos objetivos do negócio, gerando decisões mais rápidas e precisas.</li>
+                        <li><i class="fas fa-check-circle"></i> Inovação orientada a resultados: Não apenas analiso dados — os transformo em estratégias alinhadas aos objetivos do negócio, gerando decisões mais rápidas e precisas.</li>
                         <li><i class="fas fa-check-circle"></i> Comprometimento e evolução contínua: Sou orientado a desafios. Investo constantemente em atualização técnica e entrego soluções que superam o esperado.</li>
                         <li><i class="fas fa-check-circle"></i> Visão estratégica e aplicação prática: Combino conhecimento técnico com aplicabilidade direta, transformando dados complexos em insights que impactam resultados reais.</li>
                     </ul>
@@ -145,13 +94,41 @@
 
     <section id="skills" class="skills-section">
         <h2>Habilidades</h2>
-        <div class="skills">
-            <div class="skill-tags">
-                <span><i class="fab fa-python"></i> Python</span>
-                <span><i class="fas fa-database"></i> SQL</span>
-                <span><i class="fas fa-chart-bar"></i> Power BI</span>
-                <span><img src="./imagens/R_logo.svg" alt="R Logo" class="r-logo"> R</span>
-                <span><i class="fas fa-file-excel"></i> Excel</span>
+        <div class="skills-cards">
+            <div class="skill-card">
+                <div class="skill-card-icon"><i class="fab fa-python" style="color:#3776AB"></i></div>
+                <div class="skill-card-info">
+                    <span class="skill-name">Python</span>
+                    <div class="skill-bar"><div class="skill-fill" style="--level: 85%"></div></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon"><i class="fas fa-database" style="color:#E48E00"></i></div>
+                <div class="skill-card-info">
+                    <span class="skill-name">SQL</span>
+                    <div class="skill-bar"><div class="skill-fill" style="--level: 80%"></div></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon"><i class="fas fa-chart-bar" style="color:#F2C811"></i></div>
+                <div class="skill-card-info">
+                    <span class="skill-name">Power BI</span>
+                    <div class="skill-bar"><div class="skill-fill" style="--level: 85%"></div></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon"><img src="./imagens/R_logo.svg" alt="R" style="width:1.8rem;height:1.8rem"></div>
+                <div class="skill-card-info">
+                    <span class="skill-name">R</span>
+                    <div class="skill-bar"><div class="skill-fill" style="--level: 70%"></div></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon"><i class="fas fa-file-excel" style="color:#217346"></i></div>
+                <div class="skill-card-info">
+                    <span class="skill-name">Excel</span>
+                    <div class="skill-bar"><div class="skill-fill" style="--level: 80%"></div></div>
+                </div>
             </div>
         </div>
     </section>
@@ -178,38 +155,96 @@
     </div>
 
     <section id="portfolio" class="portfolio">
-        <h2>Meu Portfólio</h2>
-        <div class="portfolio-icons">
-            <div class="icon-container" onclick="window.open('./projetos/Projeto de conclusão de curso escola DNC Power Point V5 [Salvo automaticamente] (2)[1].pdf', '_blank')" style="cursor: pointer;">
-                <img src="imagens/projeto 1.png" alt="Projeto 1" class="project-icon">
+        <h2>Meus Projetos</h2>
+        <p class="section-subtitle">Projetos que demonstram minhas habilidades em dados</p>
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.open('./projetos/Projeto de conclusão de curso escola DNC Power Point V5 [Salvo automaticamente] (2)[1].pdf', '_blank')">
+                <div class="project-card-image">
+                    <img src="imagens/projeto 1.png" alt="Projeto de Conclusão DNC">
+                    <div class="project-overlay"><span>Ver Projeto →</span></div>
+                </div>
+                <div class="project-card-body">
+                    <h3>Projeto de Conclusão DNC</h3>
+                    <p>Dashboard interativo com definição de KPIs e análise estratégica de dados empresariais.</p>
+                    <div class="project-tags">
+                        <span>Power BI</span>
+                        <span>Excel</span>
+                        <span>Business Intelligence</span>
+                    </div>
+                </div>
             </div>
-            <div class="icon-container" onclick="window.open('https://colab.research.google.com/drive/1UTxZTvK6GUUbfi7KKkrNWc3gsYmX73U0?usp=sharing', '_blank')" style="cursor: pointer;">
-                <img src="imagens/projeto 2.png" alt="Projeto 2" class="project-icon">
+            <div class="project-card" onclick="window.open('https://colab.research.google.com/drive/1UTxZTvK6GUUbfi7KKkrNWc3gsYmX73U0?usp=sharing', '_blank')">
+                <div class="project-card-image">
+                    <img src="imagens/projeto 2.png" alt="Análise de Dados com Python">
+                    <div class="project-overlay"><span>Ver Projeto →</span></div>
+                </div>
+                <div class="project-card-body">
+                    <h3>Análise de Dados com Python</h3>
+                    <p>Análise exploratória com tratamento, visualização e geração de insights acionáveis a partir dos dados.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                    </div>
+                </div>
             </div>
-            <div class="icon-container" onclick="window.open('https://github.com/ribeirolucas962/Modelo_de_Fraude/blob/main/modelo_previsao__fraude.ipynb', '_blank')" style="cursor: pointer;">
-                <img src="imagens/projeto 3.png" alt="Projeto 3" class="project-icon">
+            <div class="project-card" onclick="window.open('https://github.com/ribeirolucas962/Modelo_de_Fraude/blob/main/modelo_previsao__fraude.ipynb', '_blank')">
+                <div class="project-card-image">
+                    <img src="imagens/projeto 3.png" alt="Modelo de Previsão de Fraude">
+                    <div class="project-overlay"><span>Ver Projeto →</span></div>
+                </div>
+                <div class="project-card-body">
+                    <h3>Modelo de Previsão de Fraude</h3>
+                    <p>Modelo de machine learning para detecção e previsão de transações fraudulentas com alta precisão.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Scikit-learn</span>
+                        <span>Machine Learning</span>
+                    </div>
+                </div>
             </div>
-            <div class="icon-container" onclick="window.open('https://github.com/ribeirolucas962/Projeto_aprendizado_de-maquina_Scikit_learn_Keras_TensorFlow.git')" style="cursor: pointer;">
-                <img src="imagens/projeto 4.png" alt="Projeto 4" class="project-icon">
+            <div class="project-card" onclick="window.open('https://github.com/ribeirolucas962/Projeto_aprendizado_de-maquina_Scikit_learn_Keras_TensorFlow.git', '_blank')">
+                <div class="project-card-image">
+                    <img src="imagens/projeto 4.png" alt="Aprendizado de Máquina">
+                    <div class="project-overlay"><span>Ver Projeto →</span></div>
+                </div>
+                <div class="project-card-body">
+                    <h3>Aprendizado de Máquina</h3>
+                    <p>Implementação de redes neurais e modelos de deep learning para classificação e previsão de dados.</p>
+                    <div class="project-tags">
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>Deep Learning</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Entre em Contato</h2>
+        <p class="section-subtitle">Vamos conversar sobre dados e oportunidades</p>
         <div class="contact-content">
-            <p>Entre em contato pelas redes sociais ou pelos ícones abaixo:</p>
-            <div class="social-links">
-                <a href="https://github.com/ribeirolucas962" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/lucas-ribeiron/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <!-- WhatsApp -->
-                <a href="https://wa.me/5511999999999" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
+            <div class="contact-cards">
+                <a href="https://github.com/ribeirolucas962" class="contact-card" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                    <small>ribeirolucas962</small>
                 </a>
-                <!-- E-mail -->
-                <a href="mailto:lucas@email.com" target="_blank" title="E-mail">
+                <a href="https://www.linkedin.com/in/lucas-ribeiron/" class="contact-card" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                    <small>lucas-ribeiron</small>
+                </a>
+                <a href="https://wa.me/5511999999999" class="contact-card" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                    <small>+55 (11) 99999-9999</small>
+                </a>
+                <a href="mailto:lucas@email.com" class="contact-card" target="_blank">
                     <i class="fas fa-envelope"></i>
+                    <span>E-mail</span>
+                    <small>lucas@email.com</small>
                 </a>
             </div>
         </div>
@@ -221,4 +256,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

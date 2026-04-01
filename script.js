@@ -296,78 +296,122 @@ if (contactForm) {
     });
 }
 
-// Profile Image Modal
-const profileImg = document.getElementById('profile-img');
-const modal = document.getElementById('profile-modal');
-const closeModal = document.querySelector('.close-modal');
-
-profileImg.addEventListener('click', () => {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-});
-
-closeModal.addEventListener('click', () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = ''; // Restore scrolling
-});
-
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
-
-// Close modal with Escape key
+// Close modal with Escape key (certificates modal)
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
+    if (e.key === 'Escape' && certificatesModal.classList.contains('active')) {
+        certificatesModal.classList.remove('active');
         document.body.style.overflow = '';
     }
 });
 
-// Text rotation animation
-function initTextRotation() {
-    const typingText = document.querySelector('.typing-text');
-    const texts = JSON.parse(typingText.getAttribute('data-texts'));
-    let currentIndex = 0;
+// Typing animation (character by character)
+function initTypingAnimation() {
+    const typingEl = document.querySelector('.typing-text');
+    if (!typingEl) return;
 
-    function updateText() {
-        // Fade out current text
-        typingText.style.opacity = '0';
-        typingText.style.transform = 'translateY(-20px)';
-        
-        setTimeout(() => {
-            // Update text content
-            typingText.textContent = texts[currentIndex];
-            
-            // Fade in new text
-            typingText.style.opacity = '1';
-            typingText.style.transform = 'translateY(0)';
-            
-            // Move to next text
-            currentIndex = (currentIndex + 1) % texts.length;
-        }, 500);
+    const texts = JSON.parse(typingEl.getAttribute('data-texts'));
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentText = texts[textIndex];
+
+        if (isDeleting) {
+            typingEl.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingEl.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let delay = isDeleting ? 55 : 100;
+
+        if (!isDeleting && charIndex === currentText.length) {
+            delay = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            delay = 400;
+        }
+
+        setTimeout(type, delay);
     }
 
-    // Set initial text
-    typingText.textContent = texts[0];
-    
-    // Update text every 5 seconds
-    setInterval(updateText, 5000);
+    type();
 }
 
-// Initialize text rotation when the page loads
-document.addEventListener('DOMContentLoaded', initTextRotation);
+// Scroll progress bar
+function initScrollProgress() {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (scrollTop / docHeight * 100) + '%';
+    });
+}
+
+// Navbar: glassmorphism ao rolar + link ativo
+function initNavbar() {
+    const navbar = document.querySelector('.navbar');
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links li a');
+
+    // Efeito glassmorphism ao rolar
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Atualizar link ativo conforme seção visível
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navAnchors.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === `#${current}`) {
+                a.classList.add('active');
+            }
+        });
+    });
+}
+
+// Skill bars animation
+function initSkillBars() {
+    const skillsSection = document.querySelector('.skills-section');
+    if (!skillsSection) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Aguarda a seção ficar visível antes de animar
+                setTimeout(() => {
+                    document.querySelectorAll('.skill-fill').forEach((fill, i) => {
+                        setTimeout(() => fill.classList.add('animated'), i * 150);
+                    });
+                }, 400);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(skillsSection);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-    const typingTexts = document.querySelectorAll('.typing-text');
-    
-    typingTexts.forEach((text, index) => {
-        text.style.setProperty('--i', index);
-        text.style.width = '0';
-        text.style.animationDelay = `${index * 1.5}s`;
-    });
+    initTypingAnimation();
+    initScrollProgress();
+    initNavbar();
+    initSkillBars();
 });
 
 // Certificates Modal
@@ -453,13 +497,6 @@ certificatesModal.addEventListener('click', (e) => {
     }
 });
 
-// Close certificates modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && certificatesModal.classList.contains('active')) {
-        certificatesModal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
 
 // Function to view certificate
 function viewCertificate(certificatePath) {
