@@ -761,7 +761,9 @@ footer {
 
 .certificate-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 20px 6px #91c68d;
+    border-color: #91c68d;
+    background: rgba(145, 198, 141, 0.08);
 }
 
 .certificate-card:hover::before {
