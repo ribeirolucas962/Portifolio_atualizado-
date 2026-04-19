@@ -1,0 +1,93 @@
+========================================
+     MINHA TRAJETÓRIA EM DADOS
+     Lucas Ribeiro Nepomuceno de Almeida
+========================================
+
+----------------------------------------
+2024 | FORMAÇÃO | Escola DNC
+----------------------------------------
+Formação em Dados — Escola DNC
+Duração: 18 meses | Conclusão: Abril/2024
+
+Início formal na área de dados com foco em Power BI, Excel e análise
+de negócios. Entrega do primeiro dashboard interativo com KPIs
+estratégicos e automatização de relatórios.
+
+Ferramentas: Power BI | Excel | Business Intelligence | Dashboard
+
+----------------------------------------
+2024 | PROJETO | Machine Learning
+----------------------------------------
+Primeiros Projetos de Machine Learning
+
+Desenvolvimento de modelos preditivos aplicados a problemas reais:
+- Regressão logística para classificação de dados
+- Regressão linear para estimativa de ROI em publicidade
+- Painel de vendas para e-commerce
+
+Ferramentas: Python | Scikit-learn | Regressão | ML
+
+----------------------------------------
+2025 | FORMAÇÃO | Comunidade EtaTIdados
+----------------------------------------
+Formação Estatística e Ciências de Dados
+Duração: 12 meses | Conclusão: Junho/2025
+
+Aprofundamento em estatística aplicada, análise exploratória, ETL e
+modelagem de dados com foco em aplicações reais.
+
+Ferramentas: Estatística | Python | ETL | Data Mining
+
+----------------------------------------
+2025 | FORMAÇÃO | Anhanguera
+----------------------------------------
+Graduação em Ciência de Dados
+Duração: 3 anos | Conclusão: Julho/2025
+
+Formação completa em machine learning, banco de dados, visualização
+de dados e inteligência artificial.
+
+Ferramentas: Ciência de Dados | SQL | IA | Machine Learning
+
+----------------------------------------
+2026 | PROJETO | Sistema Desktop
+----------------------------------------
+Sistema de Gestão para Oficina Mecânica
+
+Sistema desktop completo desenvolvido em Python com interface gráfica
+moderna. Módulos de clientes, veículos, ordens de serviço, estoque,
+financeiro, caixa e dashboard com geração de relatórios em PDF.
+
+Ferramentas: Python | Desktop App | GUI | Gestão
+GitHub: https://github.com/ribeirolucas962/TRABAHLHO-DO-SOLANO
+
+----------------------------------------
+2026 | PROJETO | Python & Streamlit
+----------------------------------------
+Projetos Avançados — Python & Streamlit
+
+Desenvolvimento de aplicações interativas de dados com Streamlit,
+consolidando habilidades em visualização, análise e entrega de
+soluções de dados ao usuário final.
+
+Ferramentas: Python | Streamlit | Apps de Dados
+
+----------------------------------------
+ATUAL | CURSANDO | Anhanguera
+----------------------------------------
+Bacharelado em Ciências da Computação
+Previsão de conclusão: Dezembro/2030
+
+Cursando desde 2026. Ampliando a base técnica em algoritmos,
+estruturas de dados e fundamentos da computação.
+
+Ferramentas: Computação | Algoritmos | Cursando
+
+========================================
+     CONTATO
+========================================
+WhatsApp : (47) 99265-5187
+E-mail   : ribeirolucas962@gmail.com
+LinkedIn : https://www.linkedin.com/in/lucas-ribeiron/
+GitHub   : https://github.com/ribeirolucas962
+========================================

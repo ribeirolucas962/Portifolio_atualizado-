@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Trajetória em Dados — Lucas Ribeiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f6f9;
+            color: #1e293b;
+            padding: 3rem 1.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .header h1 span {
+            color: #3b82f6;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+
+        .item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #3b82f6;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .item.projeto { border-left-color: #22c55e; }
+        .item.cursando { border-left-color: #f59e0b; }
+
+        .item-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.8rem;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge.formacao { background: #dbeafe; color: #1d4ed8; }
+        .badge.projeto   { background: #dcfce7; color: #15803d; }
+        .badge.cursando  { background: #fef9c3; color: #a16207; }
+
+        .year {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        .item h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.6rem;
+        }
+
+        .item p {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tags span {
+            background: #eff6ff;
+            color: #1d4ed8;
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.25rem 0.8rem;
+            border-radius: 999px;
+        }
+
+        .item.projeto .tags span { background: #f0fdf4; color: #15803d; }
+        .item.cursando .tags span { background: #fefce8; color: #a16207; }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .footer h3 { font-size: 1.1rem; color: #1e293b; margin-bottom: 1rem; }
+
+        .footer a {
+            display: inline-block;
+            margin: 0.3rem 0.5rem;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .footer a:hover { text-decoration: underline; }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #3b82f6;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .back-btn:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-btn" onclick="window.close()">← Voltar ao Portfólio</a>
+
+        <div class="header">
+            <h1>Minha Trajetória em <span>Dados</span></h1>
+            <p>Lucas Ribeiro Nepomuceno de Almeida</p>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="badge formacao">Formação</span>
+                <span class="year">2024</span>
+            </div>
+            <h2>Formação em Dados — Escola DNC</h2>
+            <p>Início formal na área de dados com 18 meses de formação focada em Power BI, Excel e análise de negócios. Entrega do primeiro dashboard interativo com KPIs estratégicos e automatização de relatórios.</p>
+            <div class="tags">
+                <span>Power BI</span><span>Excel</span><span>Business Intelligence</span><span>Dashboard</span>
+            </div>
+        </div>
+
+        <div class="item projeto">
+            <div class="item-header">
+                <span class="badge projeto">Projeto</span>
+                <span class="year">2024</span>
+            </div>
+            <h2>Primeiros Projetos de Machine Learning</h2>
+            <p>Desenvolvimento de modelos preditivos aplicados a problemas reais: regressão logística para classificação de dados, regressão linear para estimativa de ROI em publicidade e painel de vendas para e-commerce.</p>
+            <div class="tags">
+                <span>Python</span><span>Scikit-learn</span><span>Regressão</span><span>ML</span>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="badge formacao">Formação</span>
+                <span class="year">2025</span>
+            </div>
+            <h2>Formação Estatística e Ciências de Dados — Comunidade EtaTIdados</h2>
+            <p>Aprofundamento em estatística aplicada, análise exploratória, ETL e modelagem de dados com foco em aplicações reais. Duração de 12 meses, concluída em junho de 2025.</p>
+            <div class="tags">
+                <span>Estatística</span><span>Python</span><span>ETL</span><span>Data Mining</span>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="badge formacao">Formação</span>
+                <span class="year">2025</span>
+            </div>
+            <h2>Graduação em Ciência de Dados — Anhanguera</h2>
+            <p>Conclusão da graduação de 3 anos com formação completa em machine learning, banco de dados, visualização de dados e inteligência artificial. Concluída em julho de 2025.</p>
+            <div class="tags">
+                <span>Ciência de Dados</span><span>SQL</span><span>IA</span><span>Machine Learning</span>
+            </div>
+        </div>
+
+        <div class="item projeto">
+            <div class="item-header">
+                <span class="badge projeto">Projeto</span>
+                <span class="year">2026</span>
+            </div>
+            <h2>Sistema de Gestão para Oficina Mecânica</h2>
+            <p>Sistema desktop completo desenvolvido em Python com interface gráfica moderna. Módulos de clientes, veículos, ordens de serviço, estoque, financeiro, caixa e dashboard com geração de relatórios em PDF.</p>
+            <div class="tags">
+                <span>Python</span><span>Desktop App</span><span>GUI</span><span>Gestão</span>
+            </div>
+        </div>
+
+        <div class="item projeto">
+            <div class="item-header">
+                <span class="badge projeto">Projeto</span>
+                <span class="year">2026</span>
+            </div>
+            <h2>Projetos Avançados — Python & Streamlit</h2>
+            <p>Desenvolvimento de aplicações interativas de dados com Streamlit, consolidando habilidades em visualização, análise e entrega de soluções de dados ao usuário final.</p>
+            <div class="tags">
+                <span>Python</span><span>Streamlit</span><span>Apps de Dados</span>
+            </div>
+        </div>
+
+        <div class="item cursando">
+            <div class="item-header">
+                <span class="badge cursando">Cursando</span>
+                <span class="year">Atual</span>
+            </div>
+            <h2>Bacharelado em Ciências da Computação — Anhanguera</h2>
+            <p>Cursando desde 2026, com previsão de conclusão para dezembro de 2030. Ampliando a base técnica em algoritmos, estruturas de dados e fundamentos da computação.</p>
+            <div class="tags">
+                <span>Computação</span><span>Algoritmos</span><span>Cursando</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>Entre em Contato</h3>
+            <a href="mailto:ribeirolucas962@gmail.com">ribeirolucas962@gmail.com</a>
+            <a href="https://www.linkedin.com/in/lucas-ribeiron/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ribeirolucas962" target="_blank">GitHub</a>
+            <a href="https://wa.me/5547992655187" target="_blank">WhatsApp</a>
+        </div>
+    </div>
+</body>
+</html>

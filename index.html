@@ -22,6 +22,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#trajetoria">Trajetória</a></li>
                 <li><a href="#certificates">Certificados</a></li>
                 <li><a href="#portfolio">Portfólio</a></li>
                 <li><a href="#contact">Contato</a></li>
@@ -65,28 +66,101 @@
                 <p class="about-intro">Analista de Dados especializado em análise estatística, modelagem predictiva e visualização de dados. Atuo no desenvolvimento de soluções de Business Intelligence orientadas a resultados, desde a captura e tratamento dos dados até a entrega de dashboards e relatórios acionáveis.</p>
 
                 <div class="about-highlight">
-                    <h3>Por que o seu time precisa do meu perfil ?</h3>
+                    <h3>Minha Proposta de Valor</h3>
                     <p>Dados têm o poder de redefinir decisões empresariais.
-                    <br>Não apenas acredito nisso — estou preparado para transformar essa capacidade em resultados concretos.
+                    <br>Não apenas acredito nisso mas estou preparado para transformar essa capacidade em resultados concretos.
                     <br>Com formação contínua em Ciência de Dados e experiência práticas em análise, modelagem e visualização, entrego soluções estratégicas que otimizam processos e geram impacto direto no negócio.</p>
                 </div>
 
                 <div class="about-value">
-                    <h3>O que sua equipe conquista ao contar com o meu perfil?</h3>
+                    <h3>Minhas Competências</h3>
                     <ul class="value-list">
-                        <li><i class="fas fa-check-circle"></i> Inovação orientada a resultados: Não apenas analiso dados — os transformo em estratégias alinhadas aos objetivos do negócio, gerando decisões mais rápidas e precisas.</li>
+                        <li><i class="fas fa-check-circle"></i> Inovação orientada a resultados: Não apenas analiso dados brutos transformo em estratégias alinhadas aos objetivos do negócio, gerando decisões mais rápidas e precisas.</li>
                         <li><i class="fas fa-check-circle"></i> Comprometimento e evolução contínua: Sou orientado a desafios. Investo constantemente em atualização técnica e entrego soluções que superam o esperado.</li>
                         <li><i class="fas fa-check-circle"></i> Visão estratégica e aplicação prática: Combino conhecimento técnico com aplicabilidade direta, transformando dados complexos em insights que impactam resultados reais.</li>
                     </ul>
                 </div>
 
-                <p class="about-closing">Se você precisa de alguém que não apenas se adapte ao seu time, mas que eleva os resultados do grupo, estamos alinhados. Meu objetivo é contribuir diretamente para o crescimento da sua empresa, transformando dados em decisões estratégicas que geram valor real e duradouro. Vamos transformar desafios em oportunidades.</p>
 
-                <div class="markdown-link" style="margin-top: 2rem; display: flex; align-items: center; gap: 0.5rem;">
-                    <a href="curriculo.md" target="_blank" title="Meu curriculo">
-                        <i class="fab fa-markdown" style="font-size: 2rem; color: #24292f;"></i>
-                        <span style="font-size: 1.1rem; color: #24292f;">Meu curriculo</span>
-                    </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="trajetoria" class="timeline-section">
+        <div class="skills-cards" style="max-width:1000px;margin:0 auto 2.5rem;">
+            <div class="skill-card" onclick="window.open('./trajetoria.html', '_blank')" style="cursor:pointer;">
+                <div class="skill-card-icon" style="width:10rem;height:8rem;flex-shrink:0;">
+                    <img src="./imagens/trajetoria-profissional.png" alt="Trajetória" style="width:100%;height:100%;object-fit:contain;">
+                </div>
+                <div class="skill-card-info" style="margin-left:1.5rem;">
+                    <span class="skill-name" style="font-size:1.8rem;">Minha Trajetória</span>
+                    <span style="font-size:1.5rem;color:var(--text-muted);margin-top:0.9rem;display:block;">Clique para ver minha jornada na área de dados</span>
+                </div>
+                <span class="timeline-toggle-arrow" id="timeline-arrow" style="color:var(--primary);font-size:1rem;">▼</span>
+            </div>
+        </div>
+        <div class="timeline" id="timeline-content" style="display:none">
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <div class="timeline-category timeline-category-formacao"><i class="fas fa-graduation-cap"></i> Formação</div>
+                    <h3>Formação em Dados — Escola DNC</h3>
+                    <p>Início formal na área de dados com 18 meses de formação focada em Power BI, Excel e análise de negócios. Entrega do primeiro dashboard interativo com KPIs estratégicos e automatização de relatórios.</p>
+                    <div class="timeline-tags"><span>Power BI</span> <span>Excel</span> <span>BI</span> <span>Dashboard</span></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <div class="timeline-category timeline-category-projeto"><i class="fas fa-code"></i> Projeto</div>
+                    <h3>Primeiros Projetos de Machine Learning</h3>
+                    <p>Desenvolvimento de modelos preditivos aplicados a problemas reais: regressão logística para classificação de dados, regressão linear para estimativa de ROI em publicidade e painel de vendas para e-commerce.</p>
+                    <div class="timeline-tags"><span>Python</span> <span>Scikit-learn</span> <span>Regressão</span> <span>ML</span></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                    <div class="timeline-category timeline-category-formacao"><i class="fas fa-graduation-cap"></i> Formação</div>
+                    <h3>Formação Estatística e Ciências de Dados — Comunidade EtaTIdados</h3>
+                    <p>Aprofundamento em estatística aplicada, análise exploratória, ETL e modelagem de dados com foco em aplicações reais. Duração de 12 meses, concluída em junho de 2025.</p>
+                    <div class="timeline-tags"><span>Estatística</span> <span>Python</span> <span>ETL</span> <span>Data Mining</span></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                    <div class="timeline-category timeline-category-formacao"><i class="fas fa-graduation-cap"></i> Formação</div>
+                    <h3>Graduação em Ciência de Dados — Anhanguera</h3>
+                    <p>Conclusão da graduação de 3 anos com formação completa em machine learning, banco de dados, visualização de dados e inteligência artificial. Concluída em julho de 2025.</p>
+                    <div class="timeline-tags"><span>Ciência de Dados</span> <span>SQL</span> <span>IA</span> <span>Machine Learning</span></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-content">
+                    <div class="timeline-category timeline-category-projeto"><i class="fas fa-code"></i> Projeto</div>
+                    <h3>Sistema de Gestão para Oficina Mecânica</h3>
+                    <p>Sistema desktop completo desenvolvido em Python com interface gráfica moderna. Módulos de clientes, veículos, ordens de serviço, estoque, financeiro, caixa e dashboard com geração de relatórios em PDF.</p>
+                    <div class="timeline-tags"><span>Python</span> <span>Desktop App</span> <span>GUI</span> <span>Gestão</span></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-content">
+                    <div class="timeline-category timeline-category-projeto"><i class="fas fa-code"></i> Projeto</div>
+                    <h3>Projetos Avançados — Python & Streamlit</h3>
+                    <p>Desenvolvimento de aplicações interativas de dados com Streamlit, consolidando habilidades em visualização, análise e entrega de soluções de dados ao usuário final.</p>
+                    <div class="timeline-tags"><span>Python</span> <span>Streamlit</span> <span>Apps de Dados</span></div>
+                </div>
+            </div>
+            <div class="timeline-item timeline-item-current">
+                <div class="timeline-year">Atual</div>
+                <div class="timeline-content">
+                    <div class="timeline-category timeline-category-cursando"><i class="fas fa-book-open"></i> Cursando</div>
+                    <h3>Bacharelado em Ciências da Computação — Anhanguera</h3>
+                    <p>Cursando desde 2026, com previsão de conclusão para dezembro de 2030. Ampliando a base técnica em algoritmos, estruturas de dados e fundamentos da computação para elevar ainda mais a qualidade das soluções em dados.</p>
+                    <div class="timeline-tags"><span>Computação</span> <span>Algoritmos</span> <span>Cursando</span></div>
                 </div>
             </div>
         </div>
@@ -237,22 +311,22 @@
                     <span>LinkedIn</span>
                     <small>lucas-ribeiron</small>
                 </a>
-                <a href="https://wa.me/5511999999999" class="contact-card" target="_blank">
+                <a href="https://wa.me/5547992655187" class="contact-card" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
-                    <small>+55 (11) 99999-9999</small>
+                    <small>+55 (47) 99265-5187</small>
                 </a>
-                <a href="mailto:lucas@email.com" class="contact-card" target="_blank">
+                <a href="mailto:ribeirolucas962@gmail.com" class="contact-card" target="_blank">
                     <i class="fas fa-envelope"></i>
                     <span>E-mail</span>
-                    <small>lucas@email.com</small>
+                    <small>ribeirolucas962@gmail.com</small>
                 </a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Lucas Ribeiro Nepomuceno de Almeida. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Lucas Ribeiro Nepomuceno de Almeida. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>

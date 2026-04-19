@@ -1,3 +1,13 @@
+// Timeline Toggle
+function toggleTimeline() {
+    const content = document.getElementById('timeline-content');
+    const arrow = document.getElementById('timeline-arrow');
+    if (!content) return;
+    const isHidden = content.style.display === 'none' || content.style.display === '';
+    content.style.display = isHidden ? 'block' : 'none';
+    if (arrow) arrow.textContent = isHidden ? '▲' : '▼';
+}
+
 // Mobile Menu Toggle
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
