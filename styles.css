@@ -1214,6 +1214,7 @@ footer {
     font-weight: 500;
 }
 
+
 @media screen and (max-width: 768px) {
     .hero-text h1 {
         font-size: 2.4rem;
