@@ -6,7 +6,7 @@
 ---
 
 ## 🌟 Objetivo
-**Posição:** Analista de Dados | cientista de Dados
+**Posição:** Analista de Dados | Cientista de Dados
 
 ---
 
@@ -25,12 +25,12 @@ Busca aplicar habilidades analíticas para gerar valor estratégico às organiza
 - Instalações e manutenções elétricas preventivas e corretivas.
 - Diagnóstico e reparo de sistemas elétricos residenciais e industriais.
 
-**Técnico Operacional | Ezentis Brasil S.A**  
+**Técnico Operacional | Ezentis Brasil S.A.**  
 *Nov 2015 – Jan 2020 | São Paulo, SP*  
 - Instalação e manutenção de equipamentos de telecomunicação.
 - Testes de desempenho e implementação de melhorias em sistemas.
 
-**Técnico em Redes | Claro S.A**  
+**Técnico em Redes | Claro S.A.**  
 *Jul 2013 – Nov 2015 | Blumenau, SC*  
 - Montagem de componentes e execução de testes de funcionalidade elétrica.
 - Solução de problemas elétricos e manutenção corretiva.
@@ -39,19 +39,17 @@ Busca aplicar habilidades analíticas para gerar valor estratégico às organiza
 
 ## 🎓 Formação Acadêmica
 
-**Graduação em Ciência de Dados | Anhaguera**  
+**Graduação em Ciência de Dados | Anhanguera**  
 *Conclusão: Jul/2025*
 
- ** Fomação de Dados inetmediaro | Comunidade EtaTidados**
- *conclusão: abril/2025**
+**Formação em Dados Intermediário | Comunidade Estatidados**  
+*Conclusão: Abr/2025*
 
 **Formação em Dados | Escola DNC**  
 *Conclusão: Abr/2024*
 
 **Técnico em Eletrotécnica | CEDUP**  
 *Conclusão: Dez/2012*
-
-
 
 ---
 
