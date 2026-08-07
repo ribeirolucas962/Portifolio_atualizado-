@@ -1,17 +1,6 @@
-// Timeline Toggle
-function toggleTimeline() {
-    const content = document.getElementById('timeline-content');
-    const arrow = document.getElementById('timeline-arrow');
-    if (!content) return;
-    const isHidden = content.style.display === 'none' || content.style.display === '';
-    content.style.display = isHidden ? 'block' : 'none';
-    if (arrow) arrow.textContent = isHidden ? '▲' : '▼';
-}
-
 // Mobile Menu Toggle
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li');
 
 // Certificates Data
 let certificatesData = {
@@ -28,12 +17,12 @@ let certificatesData = {
                     "filePath": "certificados/Python/Análise de Dados com Python.pdf"
                 },
                 {
-                    "courseName": "Limpeza e Organização de Dados com Python.pd",
+                    "courseName": "Limpeza e Organização de Dados com Python",
                     "institution": "DNC",
                     "filePath": "certificados/Python/Limpeza e Organização de Dados com Python.pdf"
                 },
                 {
-                    "courseName": "Projeto de Criação de modelo de previsao de faturamento.pdf",
+                    "courseName": "Projeto de Criação de Modelo de Previsão de Faturamento",
                     "institution": "DNC",
                     "filePath": "certificados/Python/Projeto de Criação de modelo de previsao de faturamento.pdf"
                 },
@@ -53,7 +42,7 @@ let certificatesData = {
             "iconUrl": "imagens/servidor-sql.png",
             "certificates": [
                 {
-                    "courseName": "Banco de dados mysql",
+                    "courseName": "Banco de Dados MySQL",
                     "institution": "DNC",
                     "filePath": "certificados/SQL/banco de dados mysql.pdf"    
                 },
@@ -71,17 +60,17 @@ let certificatesData = {
             "iconUrl": "imagens/icons8-poder-bi-2021-48.png",
             "certificates": [
                 {
-                    "courseName": "Controle de recalamaçoes",
+                    "courseName": "Controle de Reclamações",
                     "institution": "DNC",
                     "filePath": "certificados/Power Bi/controle de recalamaçoes.pdf"
                 },
                 {
-                    "courseName": "Excel basico",
+                    "courseName": "Excel Básico",
                     "institution": "Proway",
                     "filePath": "certificados/Power Bi/excel basico.pdf"
                 },
                 {
-                    "courseName": "Excel intermediario",
+                    "courseName": "Excel Intermediário",
                     "institution": "Proway",
                     "filePath": "certificados/Power Bi/excel intermediario.pdf"
                 },
@@ -91,17 +80,17 @@ let certificatesData = {
                     "filePath": "certificados/Power Bi/Inteligência de Mercado.pdf"
                 },
                 {
-                    "courseName": "Projeto de reclamcao",
+                    "courseName": "Projeto de Reclamações",
                     "institution": "DNC",
                     "filePath": "certificados/Power Bi/Projeto de reclamcao.pdf"
                 },
                 {
-                    "courseName": "Teste de excel",
+                    "courseName": "Teste de Excel",
                     "institution": "NIN",
                     "filePath": "certificados/Power Bi/teste de excel.pdf"
                 },
                 {
-                    "courseName": "Análise de Dados com  Excel e Power BI",
+                    "courseName": "Análise de Dados com Excel e Power BI",
                     "institution": "DNC",
                     "filePath": "certificados/Power Bi/Análise de Dados com  Excel e Power BI.pdf"
                 }
@@ -120,14 +109,9 @@ let certificatesData = {
                     "filePath": "certificados/Data science/Análise de Dados.pdf"
                 },
                 {
-                    "courseName": "CBS dance Factory",
+                    "courseName": "CBS Dance Factory",
                     "institution": "DNC",
                     "filePath": "certificados/Data science/CBS dance Factory.pdf"
-                },
-                {
-                    "courseName": "Formação de dados",
-                    "institution": "DNC",
-                    "filePath": "certificados/Data science/Certificado de Conclusão do Curso Formação Completa em Estatística.pdf"
                 },
                 {
                     "courseName": "Ciência de Dados",
@@ -135,12 +119,12 @@ let certificatesData = {
                     "filePath": "certificados/Data science/Ciência de Dados.pdf"
                 },
                 {
-                    "courseName": "Classifcação em Machine Learning",
+                    "courseName": "Classificação em Machine Learning",
                     "institution": "DNC",
                     "filePath": "certificados/Data science/Classifcação em Machine Learning.pdf"
                 },
                 {
-                    "courseName": "Clusterização em  Machine Learning",
+                    "courseName": "Clusterização em Machine Learning",
                     "institution": "DNC",
                     "filePath": "certificados/Data science/Clusterização em  Machine Learning.pdf"
                 },
@@ -155,7 +139,7 @@ let certificatesData = {
                     "filePath": "certificados/Data science/Formação Complementar em DS estatidados.pdf"
                 },
                 {
-                    "courseName": "Introdução a Modelo de  Regressão Linear",
+                    "courseName": "Introdução a Modelos de Regressão Linear",
                     "institution": "DNC",
                     "filePath": "certificados/Data science/Introdução a Modelo de  Regressão Linear.pdf"
                 },
@@ -168,8 +152,8 @@ let certificatesData = {
         },
         // SE QUISER CRIAR OUTRAS CATEGORIAS É POSSÍVEL
         "outra_categoria": {
-            "title": "Outra Categoria",
-            "description": "Categora de exemplo para novos certificados",
+            "title": "Formação Complementar",
+            "description": "Certificados em cloud, inteligência artificial, algoritmos e fundamentos de tecnologia",
             // SE A CATEGORIA TIVER ICONE NO FONTAWESOME É POSSÍVEL USAR O FONTAWESOME COMO ABAIXO
             "icon": "fas fa-certificate",
             // SE A CATEGORIA NÃO TIVER ICONE NO FONTAWESOME É POSSÍVEL USAR UMA IMAGEM DA RAIZ DO PROJEO, OLHE COMO EXEMPLO A CATEGORIA PYTHON
@@ -177,21 +161,21 @@ let certificatesData = {
             "certificates": [
                 // AQUI VAI UMA LISTA DE CERTIFICADOS
                 { 
-                    "courseName": "Ada tec fundamentos da matematica",
+                    "courseName": "Fundamentos da Matemática",
                     "institution": "Ada",
                     "filePath": "certificados/Outras categorias/ada tec fundamentos da matematica.pdf"
                 },
                 {
-                    "courseName": "Certificado - Trilha Digital _ Coders 24 _ Data Science (1)",
+                    "courseName": "Trilha Digital Coders 24 — Data Science",
                     "institution": "Ada",
                     "filePath": "certificados/Outras categorias/Certificado - Trilha Digital _ Coders 24 _ Data Science (1).pdf"
                 },
                 {
-                    "courseName": "certificado ada tec.",
+                    "courseName": "Ada Tech",
                     "institution": "Ada",
                     "filePath": "certificados/Outras categorias/certificado ada tec.pdf"
                 },                {
-                    "courseName": "certificado de IA da proway",
+                    "courseName": "Inteligência Artificial",
                     "institution": "Proway",
                     "filePath": "certificados/Outras categorias/certificado de IA da proway.pdf"
                 },
@@ -211,22 +195,22 @@ let certificatesData = {
                     "filePath": "certificados/Outras categorias/Certificado LA2.pdf"
                 },
                 {
-                    "courseName": "entendimento do mercado",
+                    "courseName": "Entendimento do Mercado",
                     "institution": "Ada",
                     "filePath": "certificados/Outras categorias/entendimento do mercado.pdf"
                 },
                 {
-                    "courseName": "Algoritimo",
-                    "institution": "Curso em video",
+                    "courseName": "Algoritmos — 40 horas",
+                    "institution": "Curso em Vídeo",
                     "filePath": "certificados/Outras categorias/LUCAS-RIBEIRO-NEPOMUCENO-DE-ALMEIDA-Algoritmo-40-Horas-Certificado-Curso-em-Video.pdf"
                 },
                 {
-                    "courseName": "CHATGPT",
+                    "courseName": "ChatGPT 4",
                     "institution": "Udemy",
                     "filePath": "certificados/Outras categorias/UC-03b79d3b-67ad-44d1-812f-ec29ac884638 CHATTGPT4.pdf"
                 },
                 {
-                    "courseName": "AWS_Academy_Graduate",
+                    "courseName": "AWS Academy Cloud Foundations",
                     "institution": "AWS",
                     "filePath": "certificados/Outras categorias/AWS_Academy_Graduate___AWS_Academy_Cloud_Foundations_Badge20250515-27-coe5gz.pdf"
                 }
@@ -240,15 +224,6 @@ burger.addEventListener('click', () => {
     // Toggle Navigation
     nav.classList.toggle('active');
     burger.classList.toggle('active');
-
-    // Animate Links
-    navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
-        } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-        }
-    });
 });
 
 // Smooth Scrolling for Navigation Links
@@ -262,6 +237,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
         }
+        // Fecha o menu mobile após clicar em um link
+        nav.classList.remove('active');
+        burger.classList.remove('active');
     });
 });
 
@@ -269,7 +247,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('click', (e) => {
     if (!nav.contains(e.target) && !burger.contains(e.target)) {
         nav.classList.remove('active');
-        burger.classList.remove('toggle');
+        burger.classList.remove('active');
     }
 });
 
@@ -294,17 +272,6 @@ document.querySelectorAll('section').forEach(section => {
     section.style.transition = 'all 0.5s ease-out';
     observer.observe(section);
 });
-
-// Form Submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Mensagem enviada com sucesso!');
-        contactForm.reset();
-    });
-}
 
 // Close modal with Escape key (certificates modal)
 document.addEventListener('keydown', (e) => {
@@ -359,7 +326,8 @@ function initScrollProgress() {
     window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = (scrollTop / docHeight * 100) + '%';
+        // Evita divisão por zero quando a página não tem rolagem
+        bar.style.width = (docHeight > 0 ? scrollTop / docHeight * 100 : 0) + '%';
     });
 }
 
