@@ -64,5 +64,7 @@ Defined as CSS variables in `:root` (`styles.css`). Use them instead of hardcodi
 
 ## Known gaps worth fixing
 - `.burger` and `.project-card` are `div`s with click handlers — not keyboard accessible, no ARIA roles.
-- Images in `imagens/` are large (several PNGs above 1.5 MB); converting to resized WebP would cut page weight substantially.
+- Project thumbnails (`imagens/projeto-*.webp`) are generic placeholders reading "PROJETO 1..4", not screenshots of the actual work.
 - Excel certificates are catalogued under the Power BI category.
+
+Large images are served as resized WebP. Keep new images under ~200 KB and name them without spaces.
