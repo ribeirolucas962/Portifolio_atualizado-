@@ -54,8 +54,8 @@ let certificatesData = {
             ]
         },
         "power_bi": {
-            "title": "Power BI",
-            "description": "Certificados relacionados à visualização de dados e business intelligence com Power BI",
+            "title": "Power BI & Excel",
+            "description": "Certificados relacionados à visualização de dados, business intelligence e análise em planilhas",
             "icon": null,
             "iconUrl": "imagens/icons8-poder-bi-2021-48.png",
             "certificates": [

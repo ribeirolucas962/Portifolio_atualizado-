@@ -1078,7 +1078,7 @@ footer {
 /* ===== TIMELINE ===== */
 .timeline-section {
     padding: 5rem 2rem;
-    background: var(--bg-light);
+    background: var(--light);
     text-align: center;
 }
 
