@@ -1530,6 +1530,11 @@ body {
     color: #15803d;
 }
 
+.timeline-category-experiencia {
+    background: var(--dark);
+    color: #4ade80;
+}
+
 .timeline-category-cursando {
     background: #fef9c3;
     color: #a16207;
