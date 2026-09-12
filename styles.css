@@ -546,13 +546,24 @@ body {
     font-weight: 700;
     letter-spacing: -0.035em;
     white-space: nowrap;
-    background: linear-gradient(105deg, #ffffff 0%, #ffffff 34%, #4ade80 62%, #22c55e 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: var(--primary);
     padding-bottom: 0.06em;
 }
+
+/* Cores solidas de verdade, nao recorte de gradiente.
+   A versao anterior pintava o texto de transparente e mostrava um
+   gradiente por tras; onde esse recorte falha (outro navegador,
+   extensao de tema escuro, alto contraste) o nome sumia no fundo. */
+.hero-name-a {
+    color: #ffffff;
+}
+
+.hero-name-b {
+    color: #34d97b;
+}
+
+/* Sem gradiente recortado no texto, de proposito. Alem de sumir quando o
+   recorte falha, ele clareava "Ribeiro" ate quase branco e diluia o verde
+   da marca. Duas cores solidas leem melhor e nao dependem de nada. */
 
 .hero-role {
     font-size: clamp(1.15rem, 2.5vw, 1.6rem);
