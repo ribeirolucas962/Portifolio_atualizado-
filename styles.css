@@ -11,11 +11,11 @@ html {
 
 /* CSS Variables */
 :root {
-    --primary: #d1a664;
-    --primary-dark: #b38d4a;
-    --primary-light: rgba(209, 166, 100, 0.12);
-    --dark: #0d1b2a;
-    --dark-2: #162535;
+    --primary: #22c55e;
+    --primary-dark: #16a34a;
+    --primary-light: rgba(34, 197, 94, 0.12);
+    --dark: #0a1410;
+    --dark-2: #10201a;
     --text-dark: #2d3436;
     --text-muted: #636e72;
     --light: #f8f9fa;
@@ -51,7 +51,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(13, 27, 42, 0.75);
+    background: rgba(10, 20, 16, 0.75);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
@@ -84,47 +84,48 @@ body {
     gap: 0.6rem;
 }
 
-.logo-icon {
-    color: var(--primary);
-    font-size: 1.4rem;
-    transition: transform 0.35s ease;
+.logo-mark {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.45));
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.logo-lockup {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
 }
 
 .logo-title {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: white;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.18em;
     transition: color 0.35s ease;
-    position: relative;
 }
 
-.logo-title::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--primary);
-    border-radius: 2px;
-    transition: width 0.35s ease;
+.logo-sub {
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.34em;
+    color: var(--primary);
+    margin-top: 0.22rem;
 }
 
-.logo-badge:hover .logo-icon {
-    transform: rotate(-15deg) scale(1.25);
+.logo-badge:hover .logo-mark {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 14px rgba(34, 197, 94, 0.75));
 }
 
 .logo-badge:hover .logo-title {
     color: var(--primary);
 }
 
-.logo-badge:hover .logo-title::after {
-    width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-    .logo-title {
+@media screen and (max-width: 480px) {
+    .logo-lockup {
         display: none;
     }
 }
@@ -208,7 +209,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(13, 27, 42, 0.88) 0%, rgba(13, 27, 42, 0.72) 100%);
+    background: linear-gradient(135deg, rgba(10, 20, 16, 0.88) 0%, rgba(10, 20, 16, 0.72) 100%);
 }
 
 .hero-content {
@@ -282,7 +283,7 @@ body {
 }
 
 .about-highlight h3 {
-    color: #d1a664;
+    color: #22c55e;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -292,7 +293,7 @@ body {
 }
 
 .about-value h3 {
-    color: #d1a664;
+    color: #22c55e;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
 }
@@ -312,7 +313,7 @@ body {
 }
 
 .value-list i {
-    color: #d1a664;
+    color: #22c55e;
     font-size: 1.2rem;
     margin-top: 0.2rem;
 }
@@ -421,7 +422,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(209, 166, 100, 0.9);
+    background: rgba(34, 197, 94, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -440,7 +441,7 @@ body {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     background: white;
-    color: #d1a664;
+    color: #22c55e;
     text-decoration: none;
     border-radius: 20px;
     font-weight: 500;
@@ -484,7 +485,7 @@ body {
 
 .submit-button {
     padding: 1rem;
-    background: #d1a664;
+    background: #22c55e;
     color: white;
     border: none;
     border-radius: 5px;
@@ -506,15 +507,173 @@ body {
 }
 
 .social-links a:hover {
-    color: #d1a664;
+    color: #22c55e;
 }
 
 /* Footer */
-footer {
+/* ===== Rodape LRN Analytics ===== */
+.site-footer {
+    background: linear-gradient(180deg, var(--dark) 0%, #060d0a 100%);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 3rem 1.5rem 2rem;
     text-align: center;
-    padding: 2rem;
-    background: #2d3436;
-    color: white;
+}
+
+.footer-bar {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    padding: 1.4rem 2.2rem;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.10) 0%, rgba(10, 20, 16, 0.92) 45%, rgba(34, 197, 94, 0.10) 100%);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+    border-radius: 999px;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.12), inset 0 0 30px rgba(0, 0, 0, 0.35);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.footer-mark {
+    width: 46px;
+    height: 40px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.5));
+}
+
+.footer-wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    text-align: left;
+}
+
+.footer-lrn {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.12em;
+}
+
+.footer-analytics {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.42em;
+    color: var(--primary);
+    margin-top: 0.3rem;
+}
+
+.footer-identity {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 2rem;
+    border-left: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.footer-name {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.footer-role {
+    font-size: 0.95rem;
+    color: var(--primary);
+    margin-top: 0.18rem;
+}
+
+.footer-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 0.35rem;
+}
+
+.footer-location {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-location i {
+    color: var(--primary);
+    margin-right: 0.35rem;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0 1.2rem;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    color: var(--dark);
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.4);
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .footer-bar {
+        flex-direction: column;
+        border-radius: var(--radius-md);
+        padding: 1.8rem 1.4rem;
+        gap: 1.2rem;
+    }
+
+    .footer-identity {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding-left: 0;
+        padding-top: 1.2rem;
+        border-left: none;
+        border-top: 1px solid rgba(34, 197, 94, 0.28);
+    }
+
+    .footer-meta {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-slogan {
+        font-size: 1.22rem;
+    }
 }
 
 /* Mobile Navigation */
@@ -541,7 +700,7 @@ footer {
         right: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(13, 27, 42, 0.95);
+        background: rgba(10, 20, 16, 0.95);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
         width: 100%;
@@ -754,7 +913,7 @@ footer {
     left: 0;
     width: 100%;
     height: 5px;
-    background: #d1a664;
+    background: #22c55e;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -775,7 +934,7 @@ footer {
     width: 90px;
     height: 90px;
     margin: 0 auto 2rem;
-    background: rgba(209, 166, 100, 0.1);
+    background: rgba(34, 197, 94, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -789,7 +948,7 @@ footer {
 
 .certificate-icon i {
     font-size: 2.5rem;
-    color: #d1a664;
+    color: #22c55e;
 }
 
 .certificate-card h3 {
@@ -808,7 +967,7 @@ footer {
 .certificate-link {
     display: inline-block;
     padding: 1rem 2rem;
-    background: #d1a664;
+    background: #22c55e;
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -819,15 +978,15 @@ footer {
     cursor: pointer;
     width: 80%;
     margin-top: 1.5rem;
-    box-shadow: 0 4px 15px rgba(209, 166, 100, 0.3);
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
     position: relative;
     overflow: hidden;
 }
 
 .certificate-link:hover {
-    background: #b38d4a;
+    background: #16a34a;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(209, 166, 100, 0.4);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
 }
 
 .certificate-link:active {
@@ -977,14 +1136,14 @@ footer {
     z-index: 9999;
     width: 0%;
     transition: width 0.1s linear;
-    box-shadow: 0 0 8px rgba(209, 166, 100, 0.6);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
 }
 
 /* ===== HERO COMPONENTS ===== */
 .hero-grid-pattern {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, rgba(209, 166, 100, 0.18) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(34, 197, 94, 0.18) 1px, transparent 1px);
     background-size: 38px 38px;
     z-index: 0;
 }
@@ -992,8 +1151,8 @@ footer {
 .hero-tag {
     display: inline-block;
     padding: 0.4rem 1.2rem;
-    background: rgba(209, 166, 100, 0.15);
-    border: 1px solid rgba(209, 166, 100, 0.45);
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.45);
     color: var(--primary);
     border-radius: var(--radius-lg);
     font-size: 0.9rem;
@@ -1051,6 +1210,29 @@ footer {
     margin-right: auto;
 }
 
+.hero-slogan {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+}
+
+.hero-slogan::before {
+    content: '';
+    display: block;
+    width: 52px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    margin: 0 auto 1.3rem;
+}
+
+.hero-slogan strong {
+    font-weight: 600;
+    color: var(--primary);
+}
+
 .hero-cta {
     display: flex;
     gap: 1rem;
@@ -1068,13 +1250,13 @@ footer {
     font-weight: 600;
     font-size: 1rem;
     transition: var(--transition);
-    box-shadow: 0 4px 20px rgba(209, 166, 100, 0.4);
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
 }
 
 .btn-primary:hover {
     background: var(--primary-dark);
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(209, 166, 100, 0.55);
+    box-shadow: 0 6px 25px rgba(34, 197, 94, 0.55);
 }
 
 .btn-secondary {
@@ -1372,7 +1554,7 @@ footer {
 .project-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(13, 27, 42, 0.78);
+    background: rgba(10, 20, 16, 0.78);
     display: flex;
     align-items: center;
     justify-content: center;
