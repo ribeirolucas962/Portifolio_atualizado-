@@ -1,12 +1,5 @@
 // Timeline Toggle
-function toggleTimeline() {
-    const content = document.getElementById('timeline-content');
-    const arrow = document.getElementById('timeline-arrow');
-    if (!content) return;
-    const isHidden = content.style.display === 'none' || content.style.display === '';
-    content.style.display = isHidden ? 'block' : 'none';
-    if (arrow) arrow.textContent = isHidden ? '▲' : '▼';
-}
+
 
 // Mobile Menu Toggle
 const burger = document.querySelector('.burger');
@@ -424,6 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillBars();
     initHeroNetwork();
     initHeroCounters();
+    initTimelineReveal();
 });
 
 // Certificates Modal
@@ -681,4 +675,27 @@ function initHeroCounters() {
         }
         requestAnimationFrame(passo);
     });
+}
+
+
+// Itens da trajetoria entram conforme a pessoa rola ate eles
+function initTimelineReveal() {
+    const itens = document.querySelectorAll('.timeline-item');
+    if (!itens.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        itens.forEach(i => i.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const i = [...itens].indexOf(entry.target);
+            setTimeout(() => entry.target.classList.add('is-visible'), (i % 4) * 110);
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    itens.forEach(i => observer.observe(i));
 }

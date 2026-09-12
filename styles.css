@@ -621,6 +621,51 @@ body {
     }
 }
 
+/* a navbar e' fixa: garante folga ao chegar por ancora do menu */
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+/* ===== Trajetoria ===== */
+.timeline-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+    margin: 0 auto 3rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.timeline-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.timeline-legend-item i {
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+/* marcador sobre a linha vertical */
+/* o item atual pulsa discretamente */
+@keyframes markerPulse {
+    0%, 100% { box-shadow: 0 0 0 4px var(--light), 0 0 0 5px var(--marker), 0 0 0 5px rgba(161, 98, 7, 0.5); }
+    50%      { box-shadow: 0 0 0 4px var(--light), 0 0 0 5px var(--marker), 0 0 0 14px rgba(161, 98, 7, 0); }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 /* ===== Hero: rede de dados animada ===== */
 .hero-network {
     position: absolute;
@@ -1297,7 +1342,8 @@ body {
     background: #f8f9fa;
 }
 
-.skills-section h2 {
+.skills-section h2,
+.timeline-section h2 {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 4rem;
@@ -1561,6 +1607,7 @@ body {
 /* ===== SECTION TITLE ACCENT ===== */
 .about h2::after,
 .skills-section h2::after,
+.timeline-section h2::after,
 .portfolio h2::after,
 .contact h2::after,
 .section-title::after {
@@ -1584,7 +1631,7 @@ body {
 /* ===== TIMELINE ===== */
 .timeline-section {
     padding: 5rem 2rem;
-    background: var(--bg-light);
+    background: var(--light);
     text-align: center;
 }
 
@@ -1670,10 +1717,19 @@ body {
 
 .timeline-item {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
+    gap: 3.6rem;
+    margin-bottom: 2.2rem;
     position: relative;
     align-items: flex-start;
+    /* entrada ao rolar, ativada por JS */
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.timeline-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .timeline-year {
@@ -1698,31 +1754,47 @@ body {
     top: 0.6rem;
     width: 14px;
     height: 14px;
-    background: var(--primary);
+    background: var(--marcador, var(--primary));
     border-radius: 50%;
     border: 3px solid white;
-    box-shadow: 0 0 0 2px var(--primary);
+    box-shadow: 0 0 0 2px var(--marcador, var(--primary));
     z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+/* cada cor casa com o badge da categoria dentro do card */
+.item-experiencia { --marcador: #22c55e; }
+.item-formacao    { --marcador: #0369a1; }
+.item-projeto     { --marcador: #15803d; }
+.item-cursando    { --marcador: #a16207; }
+
+.timeline-item:hover::after {
+    transform: scale(1.35);
 }
 
 .timeline-item-current::after {
-    background: #22c55e;
-    box-shadow: 0 0 0 2px #22c55e;
     animation: pulse-dot 2s infinite;
 }
 
 @keyframes pulse-dot {
-    0%, 100% { box-shadow: 0 0 0 2px #22c55e; }
-    50% { box-shadow: 0 0 0 6px rgba(34,197,94,0.2); }
+    0%, 100% { box-shadow: 0 0 0 2px var(--marcador, var(--primary)); }
+    50%      { box-shadow: 0 0 0 7px rgba(161, 98, 7, 0.18); }
 }
 
 .timeline-content {
     background: white;
     border-radius: var(--radius-md);
-    padding: 1.2rem 1.5rem;
+    padding: 1.3rem 1.6rem;
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
     flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(34, 197, 94, 0.4);
 }
 
 .timeline-content h3 {
@@ -1787,11 +1859,7 @@ body {
     font-weight: 500;
 }
 
-@media screen and (max-width: 600px) {
-    .timeline::before { left: 70px; }
-    .timeline-item::after { left: 64px; }
-    .timeline-year { min-width: 55px; font-size: 0.78rem; }
-}
+
 
 /* ===== PROJECT CARDS ===== */
 .projects-grid {
@@ -2079,3 +2147,37 @@ body {
     color: var(--text-muted);
 }
 
+/* Trajetoria no celular.
+   Fica no fim do arquivo de proposito: .timeline-item::after e' definido
+   mais acima, e regra de mesma especificidade so vence se vier depois. */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 17px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: 0.7rem;
+        padding-left: 3.2rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .timeline-item::after {
+        left: 11px;
+        top: 0.5rem;
+    }
+
+    .timeline-year {
+        min-width: 0;
+        align-self: flex-start;
+        font-size: 0.78rem;
+    }
+
+    .timeline-content:hover {
+        transform: none;
+    }
+
+    .timeline-item:hover::after {
+        transform: none;
+    }
+}
