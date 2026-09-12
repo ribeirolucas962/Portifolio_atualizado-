@@ -1,0 +1,34 @@
+# Sistema operacional
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temporarios e backups
+*.tmp
+*.bak
+*.log
+*.old
+~$*
+
+# Dependencias, se um dia entrarem no projeto
+node_modules/
+.env
+.env.local
+
+# Arquivos de trabalho que nao vao para o site publicado
+/rascunhos/
+*.psd
+*.ai
+*.xcf
+
+# ATENCAO: nao ignore /imagens/.
+# O site e' servido pelo GitHub Pages, que publica o que esta no
+# repositorio. Imagem ignorada nao sobe e quebra no site no ar.
