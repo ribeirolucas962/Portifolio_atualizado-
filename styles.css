@@ -197,28 +197,22 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+    /* fundo em CSS puro: substitui a foto de 2,4 MB que pesava 93% da home */
+    background:
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(34, 197, 94, 0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 105%, rgba(34, 197, 94, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 45% at 12% 88%, rgba(22, 163, 74, 0.10) 0%, transparent 55%),
+        linear-gradient(165deg, #0d1f18 0%, var(--dark) 45%, #060d0a 100%);
 }
 
-.hero-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    /* a foto vira textura: quem tem de aparecer e' o texto e a rede animada */
-    opacity: 0.3;
-    filter: grayscale(0.7) brightness(0.75) contrast(1.05);
-}
+
 
 .hero-background::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-        radial-gradient(ellipse at 50% 45%, rgba(10, 20, 16, 0.55) 0%, rgba(6, 13, 10, 0.93) 72%),
-        linear-gradient(135deg, rgba(10, 20, 16, 0.9) 0%, rgba(6, 13, 10, 0.86) 100%);
+    inset: 0;
+    /* leve escurecimento nas bordas para o texto central ganhar contraste */
+    background: radial-gradient(ellipse 75% 65% at 50% 48%, transparent 0%, rgba(6, 13, 10, 0.55) 100%);
 }
 
 .hero-content {
