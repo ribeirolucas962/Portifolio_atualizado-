@@ -406,9 +406,9 @@ function initSkillBars() {
                 // Aguarda a seção ficar visível antes de animar
                 setTimeout(() => {
                     document.querySelectorAll('.skill-fill').forEach((fill, i) => {
-                        setTimeout(() => fill.classList.add('animated'), i * 150);
+                        setTimeout(() => fill.classList.add('animated'), i * 70);
                     });
-                }, 400);
+                }, 250);
                 observer.unobserve(entry.target);
             }
         });

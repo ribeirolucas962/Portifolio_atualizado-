@@ -511,6 +511,48 @@ body {
 }
 
 /* Footer */
+/* Projeto de codigo fechado: sem link, sem cursor de clique */
+.project-card-private {
+    cursor: default;
+}
+
+.project-card-private .project-overlay {
+    background: rgba(10, 20, 16, 0.82);
+}
+
+.project-card-private .project-overlay span {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* ===== Grupos de habilidades ===== */
+.skills-group-title {
+    max-width: 1000px;
+    margin: 2.5rem auto 1.2rem;
+    padding: 0 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.skills-group-title i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.skills-group-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.35), transparent);
+}
+
 /* ===== Rodape LRN Analytics ===== */
 .site-footer {
     background: linear-gradient(180deg, var(--dark) 0%, #060d0a 100%);
