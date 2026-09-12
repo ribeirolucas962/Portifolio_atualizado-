@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillBars();
     initHeroNetwork();
     initHeroCounters();
-    initTimelineReveal();
+    initTimelineToggle();
 });
 
 // Certificates Modal
@@ -678,24 +678,34 @@ function initHeroCounters() {
 }
 
 
-// Itens da trajetoria entram conforme a pessoa rola ate eles
-function initTimelineReveal() {
-    const itens = document.querySelectorAll('.timeline-item');
-    if (!itens.length) return;
+// Abre e fecha a trajetoria, revelando os itens em cascata na abertura
+function initTimelineToggle() {
+    const botao  = document.getElementById('timeline-toggle');
+    const painel = document.getElementById('timeline-panel');
+    if (!botao || !painel) return;
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        itens.forEach(i => i.classList.add('is-visible'));
-        return;
-    }
+    const itens  = painel.querySelectorAll('.timeline-item');
+    const titulo = botao.querySelector('.timeline-toggle-title');
+    const reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            const i = [...itens].indexOf(entry.target);
-            setTimeout(() => entry.target.classList.add('is-visible'), (i % 4) * 110);
-            observer.unobserve(entry.target);
-        });
-    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    botao.addEventListener('click', () => {
+        const abrindo = !painel.classList.contains('is-open');
+        painel.classList.toggle('is-open', abrindo);
+        botao.setAttribute('aria-expanded', String(abrindo));
+        if (titulo) {
+            titulo.textContent = abrindo
+                ? 'Ocultar minha trajetória'
+                : 'Ver minha trajetória completa';
+        }
 
-    itens.forEach(i => observer.observe(i));
+        if (abrindo) {
+            itens.forEach((item, i) => {
+                setTimeout(() => item.classList.add('is-visible'), reduzir ? 0 : 120 + i * 75);
+            });
+        } else {
+            itens.forEach(item => item.classList.remove('is-visible'));
+            // devolve a pessoa ao botao, que pode ter saido da tela ao recolher
+            botao.scrollIntoView({ behavior: reduzir ? 'auto' : 'smooth', block: 'center' });
+        }
+    });
 }

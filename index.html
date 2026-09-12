@@ -119,14 +119,26 @@
         <h2>Minha Trajetória</h2>
         <p class="section-subtitle">Da infraestrutura técnica à análise de dados e ao desenvolvimento</p>
 
-        <div class="timeline-legend">
-            <span class="timeline-legend-item"><i class="fas fa-briefcase"></i> Experiência</span>
-            <span class="timeline-legend-item"><i class="fas fa-graduation-cap"></i> Formação</span>
-            <span class="timeline-legend-item"><i class="fas fa-code"></i> Projeto</span>
-            <span class="timeline-legend-item"><i class="fas fa-book-open"></i> Cursando</span>
-        </div>
+        <button type="button" class="timeline-toggle" id="timeline-toggle"
+                aria-expanded="false" aria-controls="timeline-panel">
+            <span class="timeline-toggle-icon"><i class="fas fa-route"></i></span>
+            <span class="timeline-toggle-text">
+                <span class="timeline-toggle-title">Ver minha trajetória completa</span>
+                <span class="timeline-toggle-sub">10 marcos entre 2013 e hoje — experiência, formação e projetos</span>
+            </span>
+            <span class="timeline-toggle-arrow" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+        </button>
 
-        <div class="timeline" id="timeline-content">
+        <div class="timeline-panel" id="timeline-panel">
+            <div class="timeline-panel-inner">
+                <div class="timeline-legend">
+                    <span class="timeline-legend-item"><i class="fas fa-briefcase"></i> Experiência</span>
+                    <span class="timeline-legend-item"><i class="fas fa-graduation-cap"></i> Formação</span>
+                    <span class="timeline-legend-item"><i class="fas fa-code"></i> Projeto</span>
+                    <span class="timeline-legend-item"><i class="fas fa-book-open"></i> Cursando</span>
+                </div>
+
+                <div class="timeline" id="timeline-content">
             <div class="timeline-item item-experiencia">
                 <div class="timeline-year">2013</div>
                 <div class="timeline-content">
@@ -215,6 +227,8 @@
                     <h3>Bacharelado em Ciências da Computação — Anhanguera</h3>
                     <p>Cursando desde 2026, com previsão de conclusão para dezembro de 2030. Ampliando a base técnica em algoritmos, estruturas de dados e fundamentos da computação para elevar ainda mais a qualidade das soluções em dados.</p>
                     <div class="timeline-tags"><span>Computação</span> <span>Algoritmos</span> <span>Cursando</span></div>
+                </div>
+            </div>
                 </div>
             </div>
         </div>

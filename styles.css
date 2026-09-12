@@ -626,6 +626,128 @@ section[id] {
     scroll-margin-top: 80px;
 }
 
+/* ===== Trajetoria: botao de abrir ===== */
+.timeline-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 1rem;
+    padding: 1.2rem 1.6rem;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+    background: var(--white);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.timeline-toggle:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.timeline-toggle:focus-visible {
+    outline: 3px solid rgba(34, 197, 94, 0.5);
+    outline-offset: 3px;
+}
+
+.timeline-toggle-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+.timeline-toggle-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.timeline-toggle-title {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.timeline-toggle-sub {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.timeline-toggle-arrow {
+    flex-shrink: 0;
+    color: var(--primary);
+    font-size: 1rem;
+    transition: transform 0.35s ease;
+}
+
+.timeline-toggle[aria-expanded="true"] .timeline-toggle-arrow {
+    transform: rotate(180deg);
+}
+
+/* painel recolhivel: 0fr -> 1fr anima altura sem precisar saber o valor */
+.timeline-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.timeline-panel.is-open {
+    grid-template-rows: 1fr;
+}
+
+.timeline-panel-inner {
+    overflow: hidden;
+    /* enquanto fechado, o conteudo sai da ordem de foco e dos leitores */
+    visibility: hidden;
+    transition: visibility 0s linear 0.45s;
+}
+
+.timeline-panel.is-open .timeline-panel-inner {
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.timeline-panel .timeline-legend {
+    padding-top: 2.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-toggle {
+        gap: 0.9rem;
+        padding: 1rem 1.1rem;
+    }
+
+    .timeline-toggle-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.05rem;
+    }
+
+    .timeline-toggle-title { font-size: 1rem; }
+    .timeline-toggle-sub   { font-size: 0.78rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline-panel,
+    .timeline-toggle-arrow {
+        transition: none;
+    }
+}
+
 /* ===== Trajetoria ===== */
 .timeline-legend {
     display: flex;
