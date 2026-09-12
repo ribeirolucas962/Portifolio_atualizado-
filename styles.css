@@ -225,13 +225,7 @@ body {
     margin: 0 auto;
 }
 
-.hero-text h1 {
-    font-size: 3.8rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    font-weight: 700;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
-}
+
 
 /* About Section */
 .about {
@@ -527,6 +521,104 @@ body {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.35);
     color: rgba(255, 255, 255, 0.92);
+}
+
+/* ===== Hero: bloco de texto ===== */
+.hero-greeting {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.52);
+    margin-bottom: 0.9rem;
+}
+
+.hero-title {
+    margin: 0 0 1.1rem;
+    line-height: 1;
+}
+
+.hero-name {
+    /* tipografia fluida: cresce com a tela sem nunca quebrar o nome ao meio */
+    display: inline-block;
+    font-size: clamp(2.9rem, 8.4vw, 6.2rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+    background: linear-gradient(105deg, #ffffff 0%, #ffffff 34%, #4ade80 62%, #22c55e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--primary);
+    padding-bottom: 0.06em;
+}
+
+.hero-role {
+    font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.6rem;
+}
+
+.hero-role span {
+    color: var(--primary);
+    font-weight: 400;
+    margin: 0 0.15em;
+}
+
+/* linha de digitacao com cara de terminal */
+.hero-typing-container {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: clamp(0.95rem, 1.7vw, 1.12rem);
+    padding: 0.5rem 1.3rem;
+    margin-bottom: 1.9rem;
+    border: 1px solid rgba(34, 197, 94, 0.28);
+    border-radius: var(--radius-lg);
+    background: rgba(34, 197, 94, 0.07);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    /* comporta o maior texto da lista para a pilula nao mudar de tamanho */
+    min-width: 25rem;
+    justify-content: center;
+}
+
+.typing-prefix {
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.04em;
+}
+
+.hero-typing-container .typing-text {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.hero-typing-container .cursor {
+    color: var(--primary);
+    margin-left: -0.42rem;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-greeting {
+        font-size: 0.82rem;
+        letter-spacing: 0.26em;
+    }
+
+    .hero-typing-container {
+        gap: 0.35rem;
+        padding: 0.45rem 1rem;
+    }
+
+    .hero-typing-container {
+        min-width: 0;
+        width: 100%;
+        max-width: 21rem;
+    }
 }
 
 /* ===== Hero: rede de dados animada ===== */
@@ -1354,22 +1446,9 @@ body {
     z-index: 0;
 }
 
-.hero-tag {
-    display: inline-block;
-    padding: 0.4rem 1.2rem;
-    background: rgba(34, 197, 94, 0.15);
-    border: 1px solid rgba(34, 197, 94, 0.45);
-    color: var(--primary);
-    border-radius: var(--radius-lg);
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
-}
 
-.hero-name {
-    color: var(--primary);
-}
+
+
 
 @keyframes heroFadeUp {
     from {
@@ -1382,12 +1461,7 @@ body {
     }
 }
 
-.hero-typing-container {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0.8rem 0 1.5rem;
-    min-height: 2rem;
-}
+
 
 .typing-text {
     color: var(--primary);
