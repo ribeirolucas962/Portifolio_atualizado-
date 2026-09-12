@@ -51,21 +51,39 @@
         <div class="hero-background">
             <img src="./imagens/imagem de fundo.png" alt="Data Analytics Background" class="hero-bg-image">
         </div>
+        <canvas id="hero-network" class="hero-network" aria-hidden="true"></canvas>
         <div class="hero-grid-pattern"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <span class="hero-tag">Analista de Dados &amp; Desenvolvedor</span>
-                <h1>Olá, eu sou <span class="hero-name">Lucas Ribeiro</span></h1>
-                <div class="hero-typing-container">
+                <span class="hero-tag reveal" style="--delay:0ms">Analista de Dados &amp; Desenvolvedor</span>
+                <h1 class="reveal" style="--delay:110ms">Olá, eu sou <span class="hero-name">Lucas Ribeiro</span></h1>
+                <div class="hero-typing-container reveal" style="--delay:220ms">
                     <span>Especialista em </span><span class="typing-text" data-texts='["Análise de Dados", "Business Intelligence", "Machine Learning", "Desenvolvimento Web", "Visualização de Dados", "Modelagem Preditiva"]'></span><span class="cursor">|</span>
                 </div>
-                <p class="hero-slogan">Do dado bruto à <strong>inteligência de negócio</strong>.</p>
-                <div class="hero-cta">
+                <p class="hero-slogan reveal" style="--delay:330ms">Do dado bruto à <strong>inteligência de negócio</strong>.</p>
+                <div class="hero-cta reveal" style="--delay:440ms">
                     <a href="#portfolio" class="btn-primary">Ver Projetos</a>
                     <a href="#contact" class="btn-secondary">Entrar em Contato</a>
                 </div>
+                <div class="hero-stats reveal" style="--delay:570ms">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num" data-count="9">0</span>
+                        <span class="hero-stat-label">Projetos</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num" data-count="33">0</span>
+                        <span class="hero-stat-label">Certificados</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num" data-count="13" data-suffix="+">0</span>
+                        <span class="hero-stat-label">Anos em tecnologia</span>
+                    </div>
+                </div>
             </div>
         </div>
+        <a href="#about" class="hero-scroll" aria-label="Ir para a próxima seção">
+            <span class="hero-scroll-mouse"></span>
+        </a>
     </section>
 
     <section id="about" class="about">

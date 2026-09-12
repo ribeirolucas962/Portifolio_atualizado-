@@ -422,6 +422,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollProgress();
     initNavbar();
     initSkillBars();
+    initHeroNetwork();
+    initHeroCounters();
 });
 
 // Certificates Modal
@@ -552,3 +554,131 @@ function viewCertificate(certificatePath) {
 document.addEventListener('DOMContentLoaded', () => {
     loadCertificatesData();
 }); 
+
+// Rede de dados animada no hero: pontos que se movem e se ligam quando proximos
+function initHeroNetwork() {
+    const canvas = document.getElementById('hero-network');
+    if (!canvas) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const ctx = canvas.getContext('2d');
+    const hero = canvas.parentElement;
+    let pontos = [];
+    let raf = null;
+    let visivel = true;
+
+    function dimensionar() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const w = hero.offsetWidth;
+        const h = hero.offsetHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        // densidade proporcional a area, com teto para nao pesar em telas grandes
+        const total = Math.min(Math.round((w * h) / 17000), 90);
+        pontos = Array.from({ length: total }, () => ({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.32,
+            vy: (Math.random() - 0.5) * 0.32,
+            r: Math.random() * 1.8 + 1.1
+        }));
+    }
+
+    function desenhar() {
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+        ctx.clearRect(0, 0, w, h);
+
+        for (const p of pontos) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > w) p.vx *= -1;
+            if (p.y < 0 || p.y > h) p.vy *= -1;
+        }
+
+        // ligacoes entre pontos proximos
+        for (let i = 0; i < pontos.length; i++) {
+            for (let j = i + 1; j < pontos.length; j++) {
+                const dx = pontos[i].x - pontos[j].x;
+                const dy = pontos[i].y - pontos[j].y;
+                const dist = Math.hypot(dx, dy);
+                if (dist < 135) {
+                    ctx.strokeStyle = `rgba(34, 197, 94, ${0.22 * (1 - dist / 135)})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(pontos[i].x, pontos[i].y);
+                    ctx.lineTo(pontos[j].x, pontos[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        for (const p of pontos) {
+            ctx.fillStyle = 'rgba(74, 222, 128, 0.62)';
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        raf = requestAnimationFrame(desenhar);
+    }
+
+    dimensionar();
+    desenhar();
+
+    let t = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(t);
+        t = setTimeout(dimensionar, 200);
+    });
+
+    // para de animar quando o hero sai da tela, para nao gastar CPU a toa
+    new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting && !visivel) {
+                visivel = true;
+                desenhar();
+            } else if (!e.isIntersecting && visivel) {
+                visivel = false;
+                cancelAnimationFrame(raf);
+            }
+        });
+    }, { threshold: 0 }).observe(hero);
+}
+
+// Numeros do hero subindo de 0 ate o valor final
+function initHeroCounters() {
+    const nums = document.querySelectorAll('.hero-stat-num');
+    if (!nums.length) return;
+
+    const reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    nums.forEach(el => {
+        const alvo = parseInt(el.dataset.count, 10) || 0;
+        const sufixo = el.dataset.suffix || '';
+
+        if (reduzir) {
+            el.textContent = alvo + sufixo;
+            return;
+        }
+
+        const duracao = 1400;
+        const inicio = performance.now() + 600;   // espera a entrada do bloco terminar
+
+        function passo(agora) {
+            if (agora < inicio) {
+                requestAnimationFrame(passo);
+                return;
+            }
+            const p = Math.min((agora - inicio) / duracao, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(alvo * eased) + sufixo;
+            if (p < 1) requestAnimationFrame(passo);
+        }
+        requestAnimationFrame(passo);
+    });
+}
